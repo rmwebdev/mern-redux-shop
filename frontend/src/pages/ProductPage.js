@@ -12,8 +12,7 @@ const ProductPage = ({ match }) => {
             setProduct(data)
         }
         fetchProduct()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [match])
     
     return (
         <>
