@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, Col, Image, ListGroup,Row } from 'react-bootstrap'
-import products from '../products'
 import Rating from '../components/Rating'
+import axios from 'axios'
 
 const ProductPage = ({ match }) => {
-    const product = products.find((p) => p._id === match.params.id)
+    const [product, setProduct ] = useState({})
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const {data} = await axios.get(`/api/v1/products/${match.params.id}`)
+            setProduct(data)
+        }
+        fetchProduct()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+    
     return (
         <>
             
