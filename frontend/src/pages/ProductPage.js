@@ -58,7 +58,7 @@ const ProductPage = ({ match }) => {
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
-                            <div class="d-grid gap-2">
+                            <div className="d-grid gap-2">
                                 <Button className="btn btn-primary btn-sm btn-block " disabled={product.countInStock === 0} type="button">Add to Bag</Button>
                             </div>
                             </ListGroup.Item>
